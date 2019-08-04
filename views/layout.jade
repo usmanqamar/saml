@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(id='__bs_script__').
+        document.write("<script async src='http://HOST:3003/browser-sync/browser-sync-client.js?v=2.26.7'><\/script>".replace("HOST", location.hostname));
+
+
+  body
+    div(style='text-align:center')
+      h1 #{appName}
+    if user !== undefined
+      h2 Welcome, #{user.firstName}
+      a(href="/") Home
+      |&nbsp;|&nbsp;
+      a(href="/profile") Profile
+      |&nbsp;|&nbsp;
+      a(href="/logout") Logout
+    else
+      a(href="/login") Login with Okta
+    block content

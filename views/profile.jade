@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    div
+        div
+            h1 Profile
+
+        table(width='30%')
+            tbody
+                tr
+                    td
+                        | First Name
+                    td
+                        | #{ user.firstName }
+                tr
+                    td
+                        | Last Name
+                    td
+                        | #{ user.lastName }
+                tr
+                    td
+                        | Email
+                    td
+                        | #{ user.email }
+
